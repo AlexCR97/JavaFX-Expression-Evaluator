@@ -46,6 +46,8 @@ public class ExpressionTree {
     }
 
     private Node root;
+    public Node getRoot() { return root; }
+
     private List<String> tokens;
     private Map<String, Double> variables;
 

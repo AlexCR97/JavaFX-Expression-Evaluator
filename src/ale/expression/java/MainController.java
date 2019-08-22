@@ -7,11 +7,9 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
 import java.net.URL;
@@ -82,18 +80,12 @@ public class MainController implements Initializable {
     @FXML
     private TableColumn<Variable, String> tcValor;
 
-    private GraphicsContext graphics;
+    private Graphicator graphicator;
     private ObservableList<Variable> variables = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-        // Prepare canvas
-        graphics = canvas.getGraphicsContext2D();
-        graphics.setFill(Color.GRAY);
-        graphics.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
-        graphics.setFill(Color.BLACK);
-        graphics.strokeRect(0, 0, canvas.getWidth() - 0.5, canvas.getHeight());
+        graphicator = new Graphicator(canvas);
 
         // Prepare table
         tcVariable.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -146,6 +138,7 @@ public class MainController implements Initializable {
 
         // Update view
         txResultado.setText(infixExpression + " = " + result);
+        graphicator.graphicateExpressionTree(tree);
     };
 
     private final EventHandler<ActionEvent> btEliminarOnAction = event -> {
@@ -191,6 +184,5 @@ public class MainController implements Initializable {
         var variable = new Variable(id, value);
         variables.add(variable);
     };
-
 }
 
