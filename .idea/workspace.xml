@@ -2,13 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ale/expression/java/Graphicator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ale/expression/java/Lexer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ale/expression/java/Token.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Evaluador de expresiones/ale/expression/fxml/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Evaluador de expresiones/ale/expression/fxml/main.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Evaluador de expresiones/ale/expression/java/ExpressionConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Evaluador de expresiones/ale/expression/java/ExpressionConverter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Evaluador de expresiones/ale/expression/java/ExpressionEvaluator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Evaluador de expresiones/ale/expression/java/ExpressionEvaluator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Evaluador de expresiones/ale/expression/java/ExpressionTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Evaluador de expresiones/ale/expression/java/ExpressionTree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Evaluador de expresiones/ale/expression/java/MainController$Variable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Evaluador de expresiones/ale/expression/java/MainController$Variable.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Evaluador de expresiones/ale/expression/java/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Evaluador de expresiones/ale/expression/java/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ale/expression/fxml/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ale/expression/fxml/main.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ale/expression/java/ExpressionConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ale/expression/java/ExpressionConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ale/expression/java/ExpressionEvaluator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ale/expression/java/ExpressionEvaluator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ale/expression/java/ExpressionTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ale/expression/java/ExpressionTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ale/expression/java/Graphicator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ale/expression/java/Graphicator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ale/expression/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ale/expression/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ale/expression/java/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ale/expression/java/MainController.java" afterDir="false" />
     </list>
@@ -67,51 +73,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ale/expression/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="33" selection-start-line="33" selection-end-line="33" selection-end-column="49" />
+            <state relative-caret-position="171">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#569#570#0" expanded="true" />
                 <element signature="e#597#598#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ale/expression/java/ExpressionEvaluator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="620">
-              <caret line="73" selection-start-line="73" selection-end-line="73" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ale/expression/java/Graphicator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ale/expression/java/ExpressionTree.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="798">
-              <caret line="49" selection-start-line="49" selection-end-line="49" />
-              <folding>
-                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -142,12 +112,15 @@
         <option value="$PROJECT_DIR$/src/ale/expression/java/BinaryTree.java" />
         <option value="$PROJECT_DIR$/src/ale/expression/java/InfixToPostfix.java" />
         <option value="$PROJECT_DIR$/src/ale/expression/java/ExpressionEvaluatorr.java" />
+        <option value="$PROJECT_DIR$/src/ale/expression/fxml/main.fxml" />
+        <option value="$PROJECT_DIR$/src/ale/expression/java/lexer/Token.java" />
+        <option value="$PROJECT_DIR$/src/ale/expression/java/Lexer.java" />
+        <option value="$PROJECT_DIR$/src/ale/expression/java/Token.java" />
         <option value="$PROJECT_DIR$/src/ale/expression/java/ExpressionConverter.java" />
         <option value="$PROJECT_DIR$/src/ale/expression/java/ExpressionEvaluator.java" />
-        <option value="$PROJECT_DIR$/src/ale/expression/fxml/main.fxml" />
         <option value="$PROJECT_DIR$/src/ale/expression/java/ExpressionTree.java" />
-        <option value="$PROJECT_DIR$/src/ale/expression/java/MainController.java" />
         <option value="$PROJECT_DIR$/src/ale/expression/java/Main.java" />
+        <option value="$PROJECT_DIR$/src/ale/expression/java/MainController.java" />
         <option value="$PROJECT_DIR$/src/ale/expression/java/Graphicator.java" />
       </list>
     </option>
@@ -168,8 +141,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -215,6 +186,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -226,8 +199,9 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1566517691868" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1567202107101" />
     <property name="dynamic.classpath" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../NeoCompiler2" />
     <property name="recentsLimit" value="5" />
   </component>
   <component name="RecentsManager">
@@ -377,7 +351,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.2147651" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.2342282" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -386,7 +360,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.75212467" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3753541" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -446,12 +420,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/out/production/Evaluador de expresiones/ale/expression/java/InfixToPostfix.class" />
     <entry file="file://$PROJECT_DIR$/out/production/Evaluador de expresiones/ale/expression/fxml/main.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="7" column="11" lean-forward="true" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/out/production/Evaluador de expresiones/ale/expression/java/ExpressionTree.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -473,16 +447,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1406">
           <caret line="103" lean-forward="true" selection-start-line="103" selection-end-line="103" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ale/expression/java/ExpressionConverter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -511,50 +475,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ale/expression/java/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2223">
-          <caret line="140" column="51" selection-start-line="140" selection-start-column="51" selection-end-line="140" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ale/expression/java/ExpressionTree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ale/expression/fxml/main.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="15" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ale/expression/java/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/ale/expression/java/Token.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="33" selection-start-line="33" selection-end-line="33" selection-end-column="49" />
+        <state relative-caret-position="165">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#569#570#0" expanded="true" />
-            <element signature="e#597#598#0" expanded="true" />
+            <element signature="e#555#556#0" expanded="true" />
+            <element signature="e#609#610#0" expanded="true" />
+            <element signature="e#811#812#0" expanded="true" />
+            <element signature="e#852#853#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ale/expression/java/ExpressionEvaluator.java">
+    <entry file="file://$PROJECT_DIR$/src/ale/expression/java/Lexer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="73" selection-start-line="73" selection-end-line="73" />
+        <state relative-caret-position="133">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2131#2132#0" expanded="true" />
+            <element signature="e#2166#2167#0" expanded="true" />
+            <element signature="e#2203#2204#0" expanded="true" />
+            <element signature="e#2248#2249#0" expanded="true" />
+            <element signature="e#2287#2288#0" expanded="true" />
+            <element signature="e#2322#2323#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ale/expression/java/ExpressionConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="13" column="73" lean-forward="true" selection-start-line="13" selection-start-column="73" selection-end-line="13" selection-end-column="73" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -563,10 +525,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ale/expression/java/Graphicator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+        <state relative-caret-position="246">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ale/expression/java/ExpressionEvaluator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ale/expression/java/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="148" column="70" selection-start-line="148" selection-start-column="70" selection-end-line="148" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ale/expression/java/ExpressionTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="148" selection-start-line="148" selection-end-line="148" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3700#3701#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ale/expression/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#569#570#0" expanded="true" />
+            <element signature="e#597#598#0" expanded="true" />
           </folding>
         </state>
       </provider>

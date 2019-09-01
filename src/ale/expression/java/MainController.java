@@ -102,25 +102,33 @@ public class MainController implements Initializable {
         String infixExpression = tfExpresion.getText();
 
         if (infixExpression.isEmpty()) {
-            var alert = new Alert(AlertType.ERROR);
-            alert.setTitle("Evaluador de expresiones");
-            alert.setHeaderText("Error");
-            alert.setContentText("Debes ingresar una expresion aritmética");
-
-            alert.showAndWait().ifPresent((result) -> {
-                if (result == ButtonType.OK)
-                    System.out.println("Pressed OK");
-
-                else if (result == ButtonType.CLOSE)
-                    System.out.println("Pressed CLOSE");
-            });
-
+            showErrorMessage(
+                    "Evaluador de expresiones",
+                    "Error",
+                    "Debes ingresar una expresión aritmética",
+                    AlertType.ERROR
+            );
             return;
         }
 
         // Get tokens
+        //List<String> infixTokens = ExpressionConverter.tokensFrom(infixExpression);
         List<String> infixTokens = ExpressionConverter.tokensFrom(infixExpression);
+
+        if (infixTokens == null) {
+            showErrorMessage(
+                    "Evaluador de expresiones",
+                    "Error",
+                    "La expresion ingresada es invalida",
+                    AlertType.ERROR
+            );
+            return;
+        }
+
         List<String> postfixTokens = ExpressionConverter.infixToPostfix(infixTokens);
+
+        System.out.println("Infix tokens:   " + infixTokens);
+        System.out.println("Postfix tokens: " + postfixTokens);
 
         // Get variables
         var values = new HashMap<String, Double>();
@@ -130,11 +138,34 @@ public class MainController implements Initializable {
 
         // Evaluate
         var evaluator = new ExpressionEvaluator(postfixTokens, values);
-        double result = evaluator.evaluate();
+        double result;
+
+        try {
+            result = evaluator.evaluate();
+        } catch (Exception ex) {
+            showErrorMessage(
+                    "Evaluador de expresiones",
+                    "Error",
+                    "Revisa que ingresado correctamente la expresion",
+                    AlertType.ERROR
+            );
+            return;
+        }
 
         // Construct tree
         var tree = new ExpressionTree(postfixTokens, values);
-        tree.constructTree();
+
+        try {
+            tree.constructTree();
+        } catch (Exception ex) {
+            showErrorMessage(
+                    "Evaluador de expresiones",
+                    "Error",
+                    "Revisa que ingresado correctamente la expresion",
+                    AlertType.ERROR
+            );
+            return;
+        }
 
         // Update view
         txResultado.setText(infixExpression + " = " + result);
@@ -154,35 +185,82 @@ public class MainController implements Initializable {
         String id = tfVariable.getText();
         String value = tfValor.getText();
 
-        if (id.isEmpty() || value.isEmpty())
-            return;
-
-        try {
-            Double.parseDouble(value);
-        }
-        catch (NumberFormatException ex) {
-            var alert = new Alert(AlertType.ERROR);
-            alert.setTitle("Evaluador de expresiones");
-            alert.setHeaderText("Error");
-            alert.setContentText("El valor numerico ingresado es invalido: '" + value + "'");
-
-            alert.showAndWait().ifPresent((result) -> {
-                if (result == ButtonType.OK)
-                    System.out.println("Pressed OK");
-
-                else if (result == ButtonType.CLOSE)
-                    System.out.println("Pressed CLOSE");
-            });
-
+        if (id.isEmpty() || value.isEmpty()) {
+            showErrorMessage(
+                    "Evaluador de expresiones",
+                    "Consejo",
+                    "Intenta ingresar un identificador y un valor para la variable",
+                    AlertType.INFORMATION
+            );
             return;
         }
-        finally {
+
+        if (!isIdentifier(id) && !isNumber(value)) {
+            showErrorMessage(
+                    "Evaluador de expresiones",
+                    "Error",
+                    "Uno de los valores ingresados no es valido",
+                    AlertType.ERROR
+            );
             tfVariable.clear();
             tfValor.clear();
+            return;
+        }
+
+        if (identifierAlreadyDeclared(id)) {
+            showErrorMessage(
+                    "Evaluador de expresiones",
+                    "Error",
+                    "Ya existe una variable declarada con el identificador '" + id + "'",
+                    AlertType.ERROR
+            );
+            tfVariable.clear();
+            tfValor.clear();
+            return;
         }
 
         var variable = new Variable(id, value);
         variables.add(variable);
+
+        tfVariable.clear();
+        tfValor.clear();
     };
+
+    private boolean identifierAlreadyDeclared(String id) {
+        return variables.stream().anyMatch(variable -> variable.id.equals(id));
+    }
+
+    private boolean isIdentifier(String input) {
+        try {
+            Double.parseDouble(input);
+            return false;
+        } catch (NumberFormatException ex) {
+            return true;
+        }
+    }
+
+    private boolean isNumber(String input) {
+        try {
+            Double.parseDouble(input);
+            return true;
+        } catch (NumberFormatException ex) {
+            return false;
+        }
+    }
+
+    private void showErrorMessage(String title, String header, String message, AlertType alertType) {
+        var alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setHeaderText(header);
+        alert.setContentText(message);
+
+        alert.showAndWait().ifPresent((result) -> {
+            if (result == ButtonType.OK)
+                System.out.println("Pressed OK");
+
+            else if (result == ButtonType.CLOSE)
+                System.out.println("Pressed CLOSE");
+        });
+    }
 }
 

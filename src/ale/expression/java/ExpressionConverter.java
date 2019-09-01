@@ -1,15 +1,14 @@
 package ale.expression.java;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
 
 public class ExpressionConverter {
 
     public static List<String> tokensFrom(String expression) {
-        String[] tokens = expression.split(" ");
-        return new ArrayList<>(Arrays.asList(tokens));
+        var lexer = new Lexer(expression);
+        return lexer.lex();
     }
 
     public static List<String> infixToPostfix(List<String> infixTokens) {
@@ -53,8 +52,11 @@ public class ExpressionConverter {
         if (token.equals("+") || token.equals("-"))
             return 2;
 
-        if (token.equals("*") || token.equals("/"))
+        if (token.equals("*") || token.equals("/") || token.equals("%"))
             return 3;
+
+        if (token.equals("^"))
+            return 4;
 
         return -1;
     }

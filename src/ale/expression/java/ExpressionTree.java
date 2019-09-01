@@ -91,7 +91,7 @@ public class ExpressionTree {
     }
 
     private boolean isOperator(String token) {
-        return token.equals("+") || token.equals("-") || token.equals("*") || token.equals("/");
+        return token.equals("+") || token.equals("-") || token.equals("*") || token.equals("/") || token.equals("%") || token.equals("^");
     }
 
     private boolean isVariable(String token) {

@@ -19,9 +19,8 @@ public class ExpressionEvaluator {
 
         tokens.forEach((token) -> {
 
-            if (!isOperator(token)) {
+            if (!isOperator(token))
                 stack.push(token);
-            }
             else {
                 String a = stack.pop();
                 String b = stack.pop();
@@ -36,7 +35,7 @@ public class ExpressionEvaluator {
     }
 
     private boolean isOperator(String token) {
-        return token.equals("+") || token.equals("-") || token.equals("*") || token.equals("/");
+        return token.equals("+") || token.equals("-") || token.equals("*") || token.equals("/") || token.equals("%") || token.equals("^");
     }
 
     private boolean isVariable(String token) {
@@ -66,6 +65,8 @@ public class ExpressionEvaluator {
             case "-": return String.valueOf(aValue - bValue);
             case "*": return String.valueOf(aValue * bValue);
             case "/": return String.valueOf(aValue / bValue);
+            case "%": return String.valueOf(aValue % bValue);
+            case "^": return String.valueOf(Math.pow(aValue, bValue));
             default: return null;
         }
     }

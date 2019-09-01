@@ -15,8 +15,8 @@ public class Graphicator {
     private final int PARENT_TO_CHILD = 50;
     private final int CHILD_TO_CHILD = 30;
     private final int FONT_SIZE = 18;
-    private final int NODE_WIDTH = 25;
-    private final int NODE_HEIGHT = 20;
+    private final int NODE_WIDTH = 35;
+    private final int NODE_HEIGHT = 25;
     private final Color NODE_COLOR = Color.SLATEBLUE;
     private final Color FONT_COLOR = Color.WHITE;
     private final Color LINE_COLOR = Color.BLACK;

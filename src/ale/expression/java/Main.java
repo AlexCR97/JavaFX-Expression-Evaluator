@@ -13,6 +13,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("../fxml/main.fxml"));
         primaryStage.setTitle("Evaluador de expresiones");
         primaryStage.setScene(new Scene(root));
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 
@@ -22,21 +23,26 @@ public class Main extends Application {
 }
 
 /*
-((x + 8) / 2)^2; x = 12
-4x^2 + 5x - 1; x = 3
-(n - 7) / (m + 5); n = 4; m = -2
-((3 + 2)^2 - 15) / 2 * 5
-((3 + 2)^2 - 15) / (2 * 5)
-2n + 5; n = 12
-4x^2 - 10x; x = 3
-3x^2 + 2x - 8; x = -2
+a) 3 + 6 * 14 = 87
+b) 8 + 7 * 3 + 4 * 6 = 53
+c) -4 * 7 + 2 ^ 3 / 4 - 5 = -31
+d) (33 + 3 * 4) / 5 = 9
+e) 2 ^ 2 * 3 = 12
+f) 3 + 2 * (18 - 4 ^ 2) = 7
+g) 16 * 6 - 3 * 2 = 90
+h) 3 + 3 * 2 = 9
+i) 9 + 7 * 8 - 36 / 5 = 57.8
+j) 7 * 5 * 3 / 4 / 3 = 8.75
+k) 3.5 * 2 + 7 - 3 * 2 / 2.0 = 11
+l) 4 + 36 ^ (1.0 / 2) = 28 CHECAR (10)
+m) 4 * 4 + 2 * 5 / 2.0 = 21
+n) 3 * 7.0 / 2 - 3 ^ (2 - 2) = 9.5
+o) 2 ^ (3 / 2) + 4 = 6.8284
+p) 5 ^ 1.0 / 4 - 2 = -0.75
 
-(x + y * ( x + 1 * y / (y * x) )) + (c * (m / n))
-
-10 + 20 - 30 * 40 / 50
-2x + 10
-mx + b
-ax^2
-c - y / 2
-mc^2
+A = 4; B = 5; C = 1
+a) B * A - B ^ 2 / 4 * C = 13.75
+b) (A * B) / 3 ^ 2 = 2.2222
+c) (((B + C) / 2 * A + 10) * 3 * B) - 6 = 324
+d) A ^ B ^ C = 1024
  */
